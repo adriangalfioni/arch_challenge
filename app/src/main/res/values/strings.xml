@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">SplitBill</string>
+    
+    <!-- HomeScreen strings -->
+    <string name="scans_remaining">You have %d scans remaining</string>
+    <string name="no_scans_remaining">You have no scans remaining</string>
+    <string name="scan_ticket">Scan Ticket</string>
+    <string name="processing">Processing…</string>
+    <string name="photo_captured_processing">Photo captured! Processing with AI…</string>
+    <string name="error_processing_ticket">Error processing ticket: %s</string>
+    <string name="could_not_read_image">Could not read the image</string>
+    
+    <!-- ReceiptScreen strings -->
+    <string name="receipt">Receipt</string>
+    <string name="back">Back</string>
+    <string name="no_ticket_data">No ticket data available</string>
+    <string name="selected_total">Selected Total</string>
+    <string name="mark_as_paid">Mark as Paid</string>
+    <string name="each">each</string>
+    <string name="reduce_quantity">Reduce quantity</string>
+    <string name="increase_quantity">Increase quantity</string>
+</resources>
