@@ -1,4 +1,10 @@
-# SplitBill 📱
+# RETO ARQUITECTURA - DevExpert
+
+A continuación se indican los distintos cambios que se han realizado a lo largo de los diferentes vivos correspondientes al reto de arquitectura:
+
+- **Día 1**: Limpiamos el codigo eliminando properties no utilizadas, eliminando código muerto y solucionamos los distintos warnings que se indicaban al momento de compilar la app. 
+
+# Base Code: SplitBill 📱
 
 An intelligent Android app that helps you split bills by scanning receipts using AI technology.
 

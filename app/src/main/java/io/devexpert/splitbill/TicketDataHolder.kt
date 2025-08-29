@@ -11,8 +11,5 @@ object TicketDataHolder {
     }
     
     fun getTicketData(): TicketData? = _ticketData
-    
-    fun clearTicketData() {
-        _ticketData = null
-    }
+
 } 
