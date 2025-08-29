@@ -44,6 +44,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import io.devexpert.splitbill.data.TicketItem
 import io.devexpert.splitbill.data.TicketRepository
+import io.devexpert.splitbill.domain.usecases.GetTicketDataUseCase
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,7 +53,9 @@ fun ReceiptScreen(
     ticketRepository: TicketRepository,
     onBackPressed: () -> Unit
 ) {
-    val ticketData = remember { ticketRepository.getTicketData() }
+    // Caso de uso para obtener datos del repositorio
+    val getTicketDataUseCase = remember { GetTicketDataUseCase(ticketRepository) }
+    val ticketData = remember { getTicketDataUseCase() }
 
     if (ticketData == null) {
         // Si no hay datos, mostrar error y botón para volver
