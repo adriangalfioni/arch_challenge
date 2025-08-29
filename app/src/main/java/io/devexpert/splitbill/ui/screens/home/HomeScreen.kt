@@ -25,8 +25,7 @@ import androidx.compose.ui.unit.sp
 import androidx.core.content.FileProvider
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import io.devexpert.splitbill.R
-import io.devexpert.splitbill.data.ScanCounterRepository
-import io.devexpert.splitbill.data.TicketRepository
+import io.devexpert.splitbill.di.AppModule
 import io.devexpert.splitbill.ui.viewModelWithParam
 import java.io.File
 
@@ -34,17 +33,12 @@ import java.io.File
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
-    ticketRepository: TicketRepository,
-    scanCounterRepository: ScanCounterRepository,
     onTicketProcessed: () -> Unit
 ) {
     val context = LocalContext.current
 
     val viewModel: HomeViewModel = viewModelWithParam {
-        HomeViewModel(
-            ticketRepository,
-            scanCounterRepository
-        )
+        AppModule.provideHomeViewModel()
     }
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 

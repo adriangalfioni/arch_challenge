@@ -2,30 +2,18 @@ package io.devexpert.splitbill.ui.screens.receipt
 
 import androidx.lifecycle.ViewModel
 import io.devexpert.splitbill.data.TicketItem
-import io.devexpert.splitbill.data.TicketRepository
 import io.devexpert.splitbill.domain.usecases.GetTicketDataUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
-import kotlin.collections.associateWith
-import kotlin.collections.filter
-import kotlin.collections.forEach
-import kotlin.collections.map
-import kotlin.collections.mapValues
-import kotlin.collections.set
-import kotlin.collections.sumOf
-import kotlin.collections.toMutableMap
-import kotlin.to
 
 class ReceiptViewModel(
-    ticketRepository: TicketRepository,
+    val getTicketDataUseCase: GetTicketDataUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(ReceiptUiState())
     val uiState: StateFlow<ReceiptUiState> = _uiState.asStateFlow()
-
-    private val getTicketDataUseCase: GetTicketDataUseCase = GetTicketDataUseCase(ticketRepository)
 
     init {
         loadTicketData()

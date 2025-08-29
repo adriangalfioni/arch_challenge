@@ -42,21 +42,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import io.devexpert.splitbill.R
 import io.devexpert.splitbill.data.TicketItem
-import io.devexpert.splitbill.data.TicketRepository
+import io.devexpert.splitbill.di.AppModule
 import io.devexpert.splitbill.ui.viewModelWithParam
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ReceiptScreen(
-    ticketRepository: TicketRepository,
     onBackPressed: () -> Unit
 ) {
 
     val viewModel: ReceiptViewModel = viewModelWithParam {
-        ReceiptViewModel(
-            ticketRepository
-        )
+        AppModule.provideReceiptViewModel()
     }
 
     val uiState by viewModel.uiState.collectAsState()

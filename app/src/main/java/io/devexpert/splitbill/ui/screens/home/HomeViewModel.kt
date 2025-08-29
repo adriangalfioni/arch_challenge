@@ -3,8 +3,6 @@ package io.devexpert.splitbill.ui.screens.home
 import android.graphics.BitmapFactory
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.devexpert.splitbill.data.ScanCounterRepository
-import io.devexpert.splitbill.data.TicketRepository
 import io.devexpert.splitbill.domain.usecases.DecrementScanCounterUseCase
 import io.devexpert.splitbill.domain.usecases.GetScansRemainingUseCase
 import io.devexpert.splitbill.domain.usecases.InitializeScanCounterUseCase
@@ -18,17 +16,13 @@ import kotlinx.coroutines.launch
 import java.io.InputStream
 
 class HomeViewModel(
-    ticketRepository: TicketRepository,
-    scanCounterRepository: ScanCounterRepository
+    val processTicketUseCase: ProcessTicketUseCase,
+    val initializeScanCounterUseCase: InitializeScanCounterUseCase,
+    val getScansRemainingUseCase: GetScansRemainingUseCase,
+    val decrementScanCounterUseCase: DecrementScanCounterUseCase
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
-
-    // Casos de uso
-    private val processTicketUseCase = ProcessTicketUseCase(ticketRepository)
-    private val initializeScanCounterUseCase = InitializeScanCounterUseCase(scanCounterRepository)
-    private val getScansRemainingUseCase = GetScansRemainingUseCase(scanCounterRepository)
-    private val decrementScanCounterUseCase = DecrementScanCounterUseCase(scanCounterRepository)
 
     init {
         viewModelScope.launch {
