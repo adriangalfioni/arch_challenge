@@ -11,6 +11,8 @@ import io.devexpert.splitbill.data.DataStoreScanCounterDataSource
 import io.devexpert.splitbill.data.MLKitTicketDataSource
 import io.devexpert.splitbill.data.ScanCounterRepository
 import io.devexpert.splitbill.data.TicketRepository
+import io.devexpert.splitbill.ui.screens.home.HomeScreen
+import io.devexpert.splitbill.ui.screens.receipt.ReceiptScreen
 import io.devexpert.splitbill.ui.theme.SplitBillTheme
 
 class MainActivity : ComponentActivity() {

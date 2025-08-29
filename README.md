@@ -5,6 +5,7 @@ A continuación se indican los distintos cambios que se han realizado a lo largo
 - **Día 1**: Limpiamos el codigo eliminando properties no utilizadas, eliminando código muerto y solucionamos los distintos warnings que se indicaban al momento de compilar la app. 
 - **Día 2**: Utilizamos el patron Repository y creamos DataSources para de esta forma separar la capa de datos 
 - **Día 3**: Creamos casos de uso que representan una acción o tarea especifica
+- **Día 4**: Creamos la capa de presentación utilizando ViewModels y UiStates  para conectar la lógica de negocio con la interfaz de usuario.
 
 # Base Code: SplitBill 📱
 
