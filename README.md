@@ -6,7 +6,7 @@ A continuación se indican los distintos cambios que se han realizado a lo largo
 - **Día 2**: Utilizamos el patron Repository y creamos DataSources para de esta forma separar la capa de datos. Se crearon dentro del paquete data los repositorios correspondientes a Ticket y ScanCounter con sus correspondientes DataSources.
 - **Día 3**: Creamos casos de uso que representan una acción o tarea especifica. Los casos de uso se encuentran en el paquete domain.
 - **Día 4**: Creamos la capa de presentación utilizando ViewModels y UiStates  para conectar la lógica de negocio con la interfaz de usuario. Separamos las screens junto con sus ViewModels y uiStates en paquetes separados dentro de ui.
-- **Día 4**: Creamos en el paquete di un objecto AppModule que se encarga de instanciar los data sources, casos de uso y repositorios, ademas provee funciones publicas que retornan los repositorios ya instanciados con sus dependencias. Luego hacemos uso del objeto para recuperar los repositorios. Tambien creamos un test para el caso de uso ProcessTicketUseCase en el que utilizamos un Fake para el TicketDataSource.
+- **Día 5**: Creamos en el paquete di un objecto AppModule que se encarga de instanciar los data sources, casos de uso y repositorios, ademas provee funciones publicas que retornan los repositorios ya instanciados con sus dependencias. Luego hacemos uso del objeto para recuperar los repositorios. Tambien creamos un test para el caso de uso ProcessTicketUseCase en el que utilizamos un Fake para el TicketDataSource.
 
 # Base Code: SplitBill 📱
 
